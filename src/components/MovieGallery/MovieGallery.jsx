@@ -1,14 +1,24 @@
-export const MovieGallery = ({children}) => {
+
+export const MovieGallery = ({ videos }) => {
     
       
-    
+  
     
      
     return (
         
       <ul className="MovieGallery">
-        <span className="header">film 1, film 2</span>
-        {children}
+        {videos.map(video => {
+    return (
+        <li className="MovieItem"
+        id={video.id}
+          key={video.id}>
+          {video.title}
+        </li>
+        )
+          })}
+        
+        
          </ul>
 
 

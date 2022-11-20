@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const API_KEY = '?api_key=32592fc1c467ab313147df8555d6672d';
+const API_KEY = '32592fc1c467ab313147df8555d6672d';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const MAIN_PAGE_URL = '/trending/all/day';
 
@@ -25,3 +25,10 @@ export const Trending = () => {
     }
     
 
+    export const fetchSearch = async query => {
+        const res = await axios.get(
+          `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+        );
+      
+        return res.data;
+      };

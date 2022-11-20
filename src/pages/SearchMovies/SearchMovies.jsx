@@ -1,25 +1,27 @@
 import { useState, useEffect } from "react"
+import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { SearchBar } from "components/SearchBar/SearchBar";
-import { MovieGallery } from "components/MovieGallery/MovieGallery";
+
 import MovieItem from "components/MovieItem/MovieItem"
+import { useSearch } from "hooks/useSearch";
+import { MovieGallery } from "components/MovieGallery/MovieGallery";
 
 
 
-export const SearchMovies = ({onCLick}) => {
-const API_KEY = '32592fc1c467ab313147df8555d6672d'
-const [page, setPage] = useState(1);
-const [inputValue, setSearchValue] =useState('');
-const [videos, setVideos] = useState([]);
+export const SearchMovies = () => {
+const [searchParams, setSearchParams] = useSearchParams();
+const query = searchParams.get('query') ??'';
+const { videos } = useSearch(query)
 
 
 const handleGetRequest = e => {
     
   e.preventDefault();
-  console.log('submit')
+
   const form = e.currentTarget;
-  const inputValue = e.target.elements.inputValue.value
-  setSearchValue(inputValue)
+  const inputValue = e.target.elements.inputValue.value.toLowerCase()
+  setSearchParams({ query: form.elements.inputValue.value.toLowerCase() })
   
   
   console.log(inputValue)
@@ -29,45 +31,40 @@ const handleGetRequest = e => {
 
   
 
-  useEffect(() => {
+//   useEffect(() => {
     
-  if (inputValue === "") return;
-  try {
-    const fetchMovies = async () => {
-    await axios
-    .get
-    (`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${inputValue}&page=1&include_adult=false`)
-      .then(res => {
-      setVideos(videos => [...videos, ...res.results])
-    })
+//   if (query === "") return;
+//   try {
+//     const fetchMovies = async () => {
+//     await axios
+//     .get
+//     (`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&page=1&include_adult=false`)
+//       .then(res => {
+//       setVideos(res => [...res.results])
+//     })
 
-  }
-  console.log(videos)
-  fetchMovies()
+//   }
+//   console.log(videos)
+//   fetchMovies()
   
-}
-catch (error){console.log('error')}  
-},[inputValue,videos])
+// }
+// catch (error){console.log('error')}  
+// },[query])
 
 return (
   <>
   
-      <ul className="MovieGallery">
-            
-          { videos && videos.map((video) =>
-            ( <li key={video.id} className="MovieItem" onClick={()=>onCLick(video.id)}>
-                <MovieItem
-                    
-                  id={video.id}
-                  title={video.title || video.name}
-              
-            />
-                </li>
-              )
-              )}
-      </ul>
-        <SearchBar
+  <SearchBar
           setSearchValue={handleGetRequest}/>
+       
+           
+          
+             <MovieGallery
+             videos={videos}
+             />
+              
+                
+       
        
   </>
 
