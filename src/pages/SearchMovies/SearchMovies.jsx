@@ -1,56 +1,81 @@
 import { useState, useEffect } from "react"
 import axios from "axios";
+import { SearchBar } from "components/SearchBar/SearchBar";
+import { MovieGallery } from "components/MovieGallery/MovieGallery";
+import MovieItem from "components/MovieItem/MovieItem"
 
-export const SearchMovies = () => {
 
+
+export const SearchMovies = ({onCLick}) => {
+const API_KEY = '32592fc1c467ab313147df8555d6672d'
 const [page, setPage] = useState(1);
-const [searchValue, setSearchValue] =useState('');
-const [videos, setVideos] = useState();
-const [numOfPages, setNumOfPages] =useState();
+const [inputValue, setSearchValue] =useState('');
+const [videos, setVideos] = useState([]);
 
 
-const fetchSearch = async () => {
-  const {data} = await axios.get
-  (`https://api.themoviedb.org/3/search/multi?api_key=32592fc1c467ab313147df8555d6672d&query=${searchValue}&page=${page}&include_adult=false`)
+const handleGetRequest = e => {
     
-  console.log(data)
-  setVideos(data.results);
+  e.preventDefault();
+  console.log('submit')
+  const form = e.currentTarget;
+  const inputValue = e.target.elements.inputValue.value
+  setSearchValue(inputValue)
   
+  
+  console.log(inputValue)
+  form.reset();
+};
+
 
   
+
+  useEffect(() => {
+    
+  if (inputValue === "") return;
+  try {
+    const fetchMovies = async () => {
+    await axios
+    .get
+    (`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${inputValue}&page=1&include_adult=false`)
+      .then(res => {
+      setVideos(videos => [...videos, ...res.results])
+    })
+
   }
-
-  useEffect(()=> {
-    window.scroll(0,0)
-    fetchSearch()
+  console.log(videos)
+  fetchMovies()
   
-},[page] )
+}
+catch (error){console.log('error')}  
+},[inputValue,videos])
 
 return (
-    <header className="Searchbar">
-    <form className='SearchForm' 
-    // onSubmit={handleGetRequest}
-   >
-      <label >
-      <input
-      className='SearchForm-input'
-      name='inputValue'
-      type="text"
-      autoComplete="off"
-      autoFocus
-      placeholder="Search movies and TV shows"
-      onSubmit={(e) => setSearchValue(e.target.value)}
-      />
-      </label>
-      <label>
-      <button className='SearchForm-button' type="submit">&rArr;</button>
-      </label>
-   
+  <>
   
-      
-    </form>
-    </header>
+      <ul className="MovieGallery">
+            
+          { videos && videos.map((video) =>
+            ( <li key={video.id} className="MovieItem" onClick={()=>onCLick(video.id)}>
+                <MovieItem
+                    
+                  id={video.id}
+                  title={video.title || video.name}
+              
+            />
+                </li>
+              )
+              )}
+      </ul>
+        <SearchBar
+          setSearchValue={handleGetRequest}/>
+       
+  </>
 
 )
 
 }
+// https://api.themoviedb.org/3/trending/all/day?api_key=32592fc1c467ab313147df8555d6672d&include_adult=false
+
+
+
+// https://api.themoviedb.org/3/search/multi?api_key=32592fc1c467ab313147df8555d6672d&query=${searchValue}&page=${page}&include_adult=false
