@@ -3,8 +3,7 @@ import MovieItem from "components/MovieItem/MovieItem";
 import { useState, useEffect } from "react";
 
 const API_KEY = '32592fc1c467ab313147df8555d6672d';
-const BASE_URL = 'https://api.themoviedb.org/3';
-const MAIN_PAGE_URL = '/trending/all/day';
+
 
 export const StartPage = ({onCLick}) => {
 
@@ -28,12 +27,13 @@ export const StartPage = ({onCLick}) => {
 },[page] )
 
 
+
 return (
 
 <ul className="MovieGallery">
         <span className="header">Trending Today</span>
        { videos && videos.map((video) =>
-        ( <li key={video.id} className="MovieItem" onClick={()=>onCLick(video.id)}>
+        ( <li key={video.id} className="MovieItem" Link to="$:movieId">
         <MovieItem
         
         id={video.id}

@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react"
+
 import { useSearchParams } from "react-router-dom";
-import axios from "axios";
+
 import { SearchBar } from "components/SearchBar/SearchBar";
 
-import MovieItem from "components/MovieItem/MovieItem"
+
 import { useSearch } from "hooks/useSearch";
 import { MovieGallery } from "components/MovieGallery/MovieGallery";
 

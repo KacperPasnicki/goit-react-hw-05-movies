@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 
 
         
@@ -6,8 +6,8 @@ import React from 'react'
 
 const MovieItem = ({
 id,
-title
-
+title,
+openDescription
 }) => {
     
   return (

@@ -1,10 +1,9 @@
-import axios from "axios";
-import React, {useEffect, useState} from "react";
+
+import React from "react";
 import { BrowserRouter,  Routes, Route } from "react-router-dom";
-import { MovieGallery } from "./MovieGallery/MovieGallery";
+
 import { Navbar } from "./Navbar/Navbar";
-import { Trending } from "../API/API";
-import MovieItem from "./MovieItem/MovieItem";
+
 import { StartPage } from "pages/startPage/StartPage";
 import { SearchMovies } from "pages/SearchMovies/SearchMovies";
 
@@ -19,7 +18,7 @@ export const App = () => {
       <Routes>
         <Route path='/' element={<StartPage/>} />
         <Route path="/Movies" element={<SearchMovies/>} />
-
+        <Route path="/Movies:movieId" element={<SearchMovies/>} />
       </Routes>
     </div>
     </>
