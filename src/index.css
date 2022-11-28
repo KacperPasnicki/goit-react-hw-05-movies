@@ -35,7 +35,7 @@ code {
 }
 .navBar{
   
-  background-color: #39445a;
+  /* background-color: #39445a; */
   display: flex;
   position: fixed;
   

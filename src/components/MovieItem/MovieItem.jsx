@@ -2,16 +2,20 @@
 
 
         
-import React from 'react'
-
+import {React, Link} from 'react'
+import { useLocation } from "react-router-dom";
 const MovieItem = ({
 id,
 title,
-openDescription
+movie
 }) => {
-    
+  const location = useLocation();
   return (
-   <b>{title}</b>
+   <b>
+    <Link to={`${movie.id}`} location={location}>
+    {title}
+    </Link>
+    </b>
 
   )
 }

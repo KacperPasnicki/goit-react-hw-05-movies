@@ -1,15 +1,16 @@
 import axios from "axios";
-import MovieItem from "components/MovieItem/MovieItem";
+// import MovieItem from "components/MovieItem/MovieItem";
 import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 const API_KEY = '32592fc1c467ab313147df8555d6672d';
 
 
-export const StartPage = ({onCLick}) => {
+ const StartPage = () => {
 
     const [page, setPage] = useState([1])
-    const [videos, setVideos] = useState([])
-    
+    const [movies, setMovies] = useState([])
+    const location = useLocation();
     
     const fetchTrending = async () => {
     
@@ -17,7 +18,7 @@ export const StartPage = ({onCLick}) => {
     (`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}&include_adult=false`)
     
     console.log(data)
-    setVideos(data.results);
+    setMovies(data.results);
     
     }
 
@@ -31,16 +32,16 @@ export const StartPage = ({onCLick}) => {
 return (
 
 <ul className="MovieGallery">
-        <span className="header">Trending Today</span>
-       { videos && videos.map((video) =>
-        ( <li key={video.id} className="MovieItem" Link to="$:movieId">
-        <MovieItem
-        
-        id={video.id}
-        title={video.title || video.name}
-        
-        
-        />
+
+        <h2 className="header">Trending Today</h2>
+       { movies && movies.map((movie) =>
+        ( 
+        <li key={movie.id} id={movie.id} className="MovieItem" >
+      
+    <NavLink to={`movies/${movie.id}`} location={location}>
+    {movie.title}
+    </NavLink>
+    
         
         </li>
         )
@@ -49,4 +50,12 @@ return (
 
 )
     }
+
+
+    export default StartPage;
     
+    // <MovieItem
+            
+    //         id={video.id}
+    //         title={video.title || video.name}
+    //     />

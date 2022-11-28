@@ -1,6 +1,7 @@
+import { NavLink, useLocation } from "react-router-dom"
 
-export const MovieGallery = ({ videos }) => {
-    
+export const MovieGallery = ({ movies }) => {
+    const location= useLocation()
       
   
     
@@ -8,12 +9,14 @@ export const MovieGallery = ({ videos }) => {
     return (
         
       <ul className="MovieGallery">
-        {videos.map(video => {
+        {movies.map(movie => {
     return (
         <li className="MovieItem"
-        id={video.id}
-          key={video.id}>
-          {video.title}
+        id={movie.id}
+          key={movie.id}>
+            <NavLink to={`${movie.id}`} state={{ from: location }}>
+          {movie.title} 
+          </NavLink>
         </li>
         )
           })}

@@ -1,18 +1,18 @@
 
-import { useSearchParams } from "react-router-dom";
-
+import { useSearchParams, useParams } from "react-router-dom";
 import { SearchBar } from "components/SearchBar/SearchBar";
-
-
 import { useSearch } from "hooks/useSearch";
 import { MovieGallery } from "components/MovieGallery/MovieGallery";
 
 
 
-export const SearchMovies = () => {
+
+ const SearchMovies = () => {
 const [searchParams, setSearchParams] = useSearchParams();
 const query = searchParams.get('query') ??'';
-const { videos } = useSearch(query)
+const { movies } = useSearch(query)
+
+
 
 
 const handleGetRequest = e => {
@@ -60,7 +60,7 @@ return (
            
           
              <MovieGallery
-             videos={videos}
+             movies={movies}
              />
               
                 
@@ -71,6 +71,10 @@ return (
 )
 
 }
+
+
+export default SearchMovies;
+
 // https://api.themoviedb.org/3/trending/all/day?api_key=32592fc1c467ab313147df8555d6672d&include_adult=false
 
 

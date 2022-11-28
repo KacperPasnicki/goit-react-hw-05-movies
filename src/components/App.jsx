@@ -1,27 +1,28 @@
 
-import React from "react";
-import { BrowserRouter,  Routes, Route } from "react-router-dom";
+import {lazy} from "react";
+import { BrowserRouter,  Routes, Route, Router } from "react-router-dom";
 
 import { Navbar } from "./Navbar/Navbar";
 
-import { StartPage } from "pages/startPage/StartPage";
-import { SearchMovies } from "pages/SearchMovies/SearchMovies";
-
+const  StartPage = lazy(() => import("pages/startPage/StartPage"))
+const SearchMovies  = lazy(() => import("pages/SearchMovies/SearchMovies"));
+const MovieDetails = lazy(() => import("pages/MovieDetailsPage/MovieDetailsPage"))
 
 export const App = () => {
   return (
-    <BrowserRouter>
-    <>
-    <Navbar></Navbar>
-    <div
-     className="App">
+   
       <Routes>
-        <Route path='/' element={<StartPage/>} />
-        <Route path="/Movies" element={<SearchMovies/>} />
-        <Route path="/Movies:movieId" element={<SearchMovies/>} />
+        <Route path="/" element={<Navbar/>} >
+          <Route index element={<StartPage/>}/>
+          <Route path="movies" element={<SearchMovies/>} />
+          <Route path="movies/:movieId" element={<MovieDetails/>}>
+          </Route>
+          </Route>
       </Routes>
-    </div>
-    </>
-    </BrowserRouter>
+      
+    
   );
 };
+
+/*/
+<Route path="/Movies:movieId" element={<SearchMovies/>} />/*/
