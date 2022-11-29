@@ -4,7 +4,7 @@ export const MovieGallery = ({ movies }) => {
     const location= useLocation()
       
   
-    
+    if (!movies) return;
      
     return (
         

@@ -39,7 +39,7 @@ const API_KEY = '32592fc1c467ab313147df8555d6672d';
         const res = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
         );
-         
+         console.log(res.data)
         return res.data;
       };
     export const fetchTrending = async () => {
@@ -60,7 +60,7 @@ const API_KEY = '32592fc1c467ab313147df8555d6672d';
           return res.data;
         };
 
-        export const fetchCReviews = async id => {
+        export const fetchCredit = async id => {
           const res = await axios.get(
             `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}&language=en-US`
           );

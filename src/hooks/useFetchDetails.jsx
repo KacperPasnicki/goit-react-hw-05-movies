@@ -11,6 +11,6 @@ export const useFetchDetails = movieId => {
       });
     }, [movieId]);
     console.log({movieId})
-    console.log({movieId})
+    console.log({movie})
     return { movie };
   };
