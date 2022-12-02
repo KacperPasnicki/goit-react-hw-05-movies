@@ -6,14 +6,17 @@ export const Navbar = () => {
     return (
         
     
-        <span className="navBar" onClick={() => window.scroll(0, 0)}>
-            
-            <NavLink to ="/" className="navBarLink">
-                Home
-            </NavLink>
-            <NavLink to ="/Movies" className="navBarLink">Movies</NavLink>
-            <Suspense fallback={<div>Loading...</div>}><Outlet /></Suspense>
-        </span>
+        <div className="navBar" onClick={() => window.scroll(0, 0)}>
+            <header>
+                <NavLink to ="/" className="navBarLink">
+                    Home
+                </NavLink>
+                <NavLink to ="/Movies" className="navBarLink">
+                    Movies</NavLink>
+            </header>
+                 <Suspense fallback={<div>Loading...</div>}>
+                 <Outlet /></Suspense>
+        </div>
         
       
     )

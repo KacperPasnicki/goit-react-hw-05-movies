@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchSearch } from '../API/API'
 
 export const useSearch = query => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState();
 
   useEffect(() => {
     if (query === '') return;

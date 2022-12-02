@@ -12,10 +12,13 @@ export const App = () => {
   return (
    
       <Routes>
-        <Route path="/" element={<Navbar/>} >
+        <Route path="/" element={<Navbar/>}>
           <Route index element={<StartPage/>}/>
           <Route path="movies" element={<SearchMovies/>} />
           <Route path="movies/:movieId" element={<MovieDetails/>}>
+            <Route path="cast" element={<Cast/>}/>
+            <Route path="reviews" element={<Reviews/>}/>
+            <Route/>
           </Route>
           </Route>
       </Routes>
