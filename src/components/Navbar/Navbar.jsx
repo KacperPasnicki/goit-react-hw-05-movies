@@ -6,12 +6,12 @@ export const Navbar = () => {
     return (
         
     
-        <div className="navBar" onClick={() => window.scroll(0, 0)}>
+        <div className="navBar" >
             <header className="navBar">
-                <NavLink to ="/" className="navBarLink">
+                <NavLink to ="/" className="navBarLink" onClick={() => window.scroll(0, 0)}>
                     Home
                 </NavLink>
-                <NavLink to ="/Movies" className="navBarLink">
+                <NavLink to ="/Movies" className="navBarLink" onClick={() => window.scroll(0, 0)}>
                     Movies</NavLink>
             </header>
                  <Suspense fallback={<div>Loading...</div>}>
