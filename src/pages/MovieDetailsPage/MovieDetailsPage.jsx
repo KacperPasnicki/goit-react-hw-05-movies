@@ -1,14 +1,13 @@
 
-import { useLocation, useParams, NavLink} from 'react-router-dom'
+import { useLocation, useParams, NavLink, Link, Outlet} from 'react-router-dom'
 import {useFetchDetails} from 'hooks/useFetchDetails'
-import { useEffect, useState } from 'react';
-import {fetchDetails}   from 'API/API'
+
 
 const MovieDetails = () => {
      const location = useLocation();
     const { movieId } = useParams();
     const { movie } = useFetchDetails(movieId);
-   const {genres} = useState()
+    
 
     
 // const [genres, setGenres] = useState([])
@@ -21,46 +20,42 @@ let img_path=`https://image.tmdb.org/t/p/w500`
 const backHref = location.state?.from ?? '/movies';
 
   
- 
-// useEffect(() => {
-//    if (movieId) 
-//    fetchDetails(movieId).then(res => {
-//       setMovieId({...res});
-//    });
-//    console.log(movieId)
-//  console.log(movie)
-//  }, [movieId]);
 
 
-// if (!movie) return "hello movie";
+if (!movie) return "...Loading";
+let genres =[]
 
 return (
-<>
+<main>
 <NavLink to={backHref} >
         ← Go back
       </NavLink>
 <div>
-      <img src={img_path+movie.poster_path} alt={movie.alt}  width="350px"></img>
+      <img src={img_path+movie.poster_path} alt={movie.alt}  width="350px" ></img>
       </div>
- <h2>Tytuł:{movie.title}({movie.release_date.slice(0,4)})</h2>
+ <h2>Tytuł:{movie.title}({movie.release_date})</h2>
  <span>user score: {movie.vote_average}</span>
- 
+ <h3>Genres</h3>
+ {/* {movie.genres.map(genre => genre.name).join(', ')} */}
  <h3>Overview:</h3>
  <span>
     {movie.overview}
  </span>
-<h6>Additional information</h6>
+
+<h4>Additional information</h4>
 
 <ul>
    <li>
+   <Link to="Cast">
       Cast
-   </li>
+   </Link></li>
    <li>
+   <Link to="Reviews">
       Reviews
-   </li>
+   </Link></li>
 </ul>
-
-</>
+<Outlet />
+</main>
 )
 
 

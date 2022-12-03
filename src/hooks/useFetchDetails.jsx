@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import {fetchDetails} from '../API/API'
 
 export const useFetchDetails = (movieId) => {
-    const [movie, setMovie] = useState({});
+    const [movie, setMovie] = useState([]);
   
     useEffect(() => {
       if (movieId) 
@@ -10,8 +10,7 @@ export const useFetchDetails = (movieId) => {
         setMovie({...res});
       });
     }, [movieId]);
-    console.log(movieId)
-    console.log(movie)
+   
     return {movie};
-    console.log(movie)
+   
   };

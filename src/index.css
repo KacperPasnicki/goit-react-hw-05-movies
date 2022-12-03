@@ -33,13 +33,13 @@ code {
 }
 
 }
-.navBar{
+/* .navBar{
   
-  /* background-color: #39445a; */
+  /* background-color: #39445a; 
   display: flex;
   position: fixed;
   
-/* font-size:  6.4vh; */
+/* font-size:  6.4vh; 
 box-shadow: 0px 1px 5px black;
 z-index: 100;
 width: 100%;
@@ -49,13 +49,13 @@ width: 100%;
 cursor: pointer;
 text-transform: uppercase;
 
-}
+} */
 
 .navBarLink{
-  color: aliceblue;
+  /* color: aliceblue; */
   text-decoration: none;
   justify-content: space-between;
-  margin-right: 10px;
+ margin: 25px;
 }
 .header{
   margin-top: 30px;
@@ -154,4 +154,25 @@ transform: scale(1.005);
 .SearchForm-input::placeholder {
   font: inherit;
   font-size: 18px;
+}
+
+
+.NotFoundText{
+  margin-left: 30%;
+ }
+.NotFound {
+margin: 15% 20% 0 30%;
+font-size: 15vh;
+}
+.actors{
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    margin-bottom: 15px;
+    max-width: 100px;
+}
+
+.actorPlaceholder{
+  font-size: 8vh;
+  color: darkgray
 }
