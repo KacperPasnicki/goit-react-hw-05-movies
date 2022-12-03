@@ -9,27 +9,19 @@ const MovieDetails = () => {
     const { movie } = useFetchDetails(movieId);
     
 
-    
-// const [genres, setGenres] = useState([])
-// const [movie, setMovie] = useState(null);
-// const [movieId, setMovieId] =useState();
-// const [userScore, setUserScore] = useState('')
-// const [overview, setOverview] =useState('')
 
 let img_path=`https://image.tmdb.org/t/p/w500`
 const backHref = location.state?.from ?? '/movies';
 
-  
-
 
 if (!movie) return "...Loading";
-let genres =[]
+// let genres =[]
 
 return (
 <main>
-<NavLink to={backHref} >
-        ← Go back
-      </NavLink>
+   <NavLink to={backHref} >
+   ← Go back
+   </NavLink>
 <div>
       <img src={img_path+movie.poster_path} alt={movie.alt}  width="350px" ></img>
       </div>
@@ -62,10 +54,3 @@ return (
 }
 
 export default MovieDetails;
-
-
-{/* <ul >
-      {genres.genres.map((genre, i) => (
-        <li key={genre.name} >{genre.name}{i === genres.genres.length - 1 ? '' : ', '}</li>
-      ))}
-    </ul> */}

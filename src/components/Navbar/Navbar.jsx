@@ -7,7 +7,7 @@ export const Navbar = () => {
         
     
         <div className="navBar" onClick={() => window.scroll(0, 0)}>
-            <header>
+            <header className="navBar">
                 <NavLink to ="/" className="navBarLink">
                     Home
                 </NavLink>

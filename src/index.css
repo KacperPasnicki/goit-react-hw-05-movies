@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+
 
 * {
   scroll-behavior: smooth;
@@ -33,13 +33,9 @@ code {
 }
 
 }
-/* .navBar{
+.navBar{
   
-  /* background-color: #39445a; 
-  display: flex;
-  position: fixed;
   
-/* font-size:  6.4vh; 
 box-shadow: 0px 1px 5px black;
 z-index: 100;
 width: 100%;
@@ -47,12 +43,12 @@ padding: 15px;
 justify-content:flex-start;
 width: 100%;
 cursor: pointer;
-text-transform: uppercase;
+text-transform: uppercase; 
 
-} */
+}
 
 .navBarLink{
-  /* color: aliceblue; */
+
   text-decoration: none;
   justify-content: space-between;
  margin: 25px;
