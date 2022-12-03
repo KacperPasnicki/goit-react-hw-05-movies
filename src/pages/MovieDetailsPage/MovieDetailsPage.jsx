@@ -25,7 +25,7 @@ return (
 <div>
       <img src={img_path+movie.poster_path} alt={movie.alt}  width="350px" ></img>
       </div>
- <h2>Tytuł:{movie.title}({movie.release_date})</h2>
+ <h2>Title:{movie.title}({movie.release_date})</h2>
  <span>user score: {movie.vote_average}</span>
  <h3>Genres</h3>
  {/* {movie.genres.map(genre => genre.name).join(', ')} */}

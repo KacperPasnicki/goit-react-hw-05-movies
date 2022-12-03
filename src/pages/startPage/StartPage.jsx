@@ -8,7 +8,7 @@ const API_KEY = '32592fc1c467ab313147df8555d6672d';
 
  const StartPage = () => {
 
-    const [page, setPage] = useState([1])
+    const [page] = useState([1])
     const [movies, setMovies] = useState([])
     const location = useLocation();
     

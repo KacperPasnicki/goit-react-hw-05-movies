@@ -1,5 +1,5 @@
 
-import { useSearchParams, useParams } from "react-router-dom";
+import { useSearchParams} from "react-router-dom";
 import { SearchBar } from "components/SearchBar/SearchBar";
 import { useSearch } from "hooks/useSearch";
 import { MovieGallery } from "components/MovieGallery/MovieGallery";
