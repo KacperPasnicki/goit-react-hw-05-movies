@@ -8,7 +8,7 @@ export const Navbar = () => {
     
         <div className="navBar" >
             <header className="navBar">
-                <NavLink to ="/" className="navBarLink" onClick={() => window.scroll(0, 0)}>
+                <NavLink to ="/" className="navBarLink" onClick={() => window.scroll(0, 0)} end>
                     Home
                 </NavLink>
                 <NavLink to ="/Movies" className="navBarLink" onClick={() => window.scroll(0, 0)}>
