@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import {fetchDetails} from '../API/API'
 
 export const useFetchDetails = (movieId) => {
-    const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState(null);
   
     useEffect(() => {
       if (movieId) 

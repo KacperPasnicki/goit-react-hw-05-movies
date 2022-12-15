@@ -27,14 +27,14 @@ const API_KEY = '32592fc1c467ab313147df8555d6672d';
     
 },[page] )
 
-
+if (!StartPage) return "...loading"
 
 return (
 
 <ul className="MovieGallery">
 
         <h2 className="header">Trending Today</h2>
-       { movies && movies.map((movie) =>
+       {movies.map((movie) =>
         ( 
         <li key={movie.id} id={movie.id} className="MovieItem" >
       

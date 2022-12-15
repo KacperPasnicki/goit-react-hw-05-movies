@@ -25,10 +25,10 @@ return (
 <div>
       <img src={img_path+movie.poster_path} alt={movie.alt}  width="350px" ></img>
       </div>
- <h2>Title:{movie.title}({movie.release_date})</h2>
- <span>user score: {movie.vote_average}</span>
+ <h2>Title: {movie.title}({movie.release_date.slice(0,4)})</h2>
+ <span>user score: {movie.vote_average.toFixed(1) }/10</span>
  <h3>Genres</h3>
- {/* {movie.genres.map(genre => genre.name).join(', ')} */}
+ {movie.genres.map(genre => genre.name).join(', ')}
  <h3>Overview:</h3>
  <span>
     {movie.overview}
