@@ -14,7 +14,7 @@ export const MovieGallery = ({ movies }) => {
         <li className="MovieItem"
         id={movie.id}
           key={movie.id}>
-            <NavLink to={`${movie.id}`} state={{ from: location }}>
+            <NavLink to={`${movie.id}`} state={{ from: location }} className='Links'>
           {movie.title} 
           </NavLink>
         </li>

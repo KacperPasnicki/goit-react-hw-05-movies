@@ -17,6 +17,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
 .App {
   background-color:antiquewhite;
   min-height: 100vh;
@@ -33,9 +35,14 @@ code {
 }
 
 }
+
+.layout{
+  background-color: #39445a;
+}
+
 .navBar{
   
-  
+  background-color:antiquewhite;
 box-shadow: 0px 1px 5px black;
 z-index: 100;
 width: 100%;
@@ -47,8 +54,11 @@ text-transform: uppercase;
 
 }
 
+.detailsPage{
+  color: antiquewhite
+}
 .navBarLink{
-
+  color: #39445a;
   text-decoration: none;
   justify-content: space-between;
  margin: 25px;
@@ -65,7 +75,7 @@ text-transform: uppercase;
 .MovieItem{
   padding: 15px;
   list-style: none;
-  color: #39445a;
+  /* color: #39445a; */
   cursor: pointer;
 }
 
@@ -171,4 +181,9 @@ font-size: 15vh;
 .actorPlaceholder{
   font-size: 8vh;
   color: darkgray
+}
+.Links {
+  color: antiquewhite;
+  text-decoration: none;
+
 }

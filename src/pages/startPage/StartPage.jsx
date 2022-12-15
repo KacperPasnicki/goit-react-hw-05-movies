@@ -38,7 +38,7 @@ return (
         ( 
         <li key={movie.id} id={movie.id} className="MovieItem" >
       
-    <NavLink to={`movies/${movie.id}`} location={location}>
+    <NavLink to={`movies/${movie.id}`} location={location} className="Links">
     {movie.title}
     </NavLink>
     

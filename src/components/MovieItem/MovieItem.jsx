@@ -11,7 +11,7 @@ movie
 }) => {
   const location = useLocation();
   return (
-   <b>
+   <b className='Links'>
     <Link to={`${movie.id}`} location={location}>
     {title}
     </Link>

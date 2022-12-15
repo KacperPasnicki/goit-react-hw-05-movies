@@ -18,8 +18,8 @@ if (!movie) return "...Loading";
 // let genres =[]
 
 return (
-<main>
-   <NavLink to={backHref} >
+<main className='detailsPage'>
+   <NavLink to={backHref} className='Links'>
    ← Go back
    </NavLink>
 <div>
@@ -38,11 +38,11 @@ return (
 
 <ul>
    <li>
-   <Link to="Cast">
+   <Link to="Cast" className='Links'>
       Cast
    </Link></li>
    <li>
-   <Link to="Reviews">
+   <Link to="Reviews" className='Links'>
       Reviews
    </Link></li>
 </ul>

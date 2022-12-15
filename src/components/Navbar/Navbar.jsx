@@ -6,7 +6,7 @@ export const Navbar = () => {
     return (
         
     
-        <div className="navBar" >
+        <div className="layout" >
             <header className="navBar">
                 <NavLink to ="/" className="navBarLink" onClick={() => window.scroll(0, 0)} end>
                     Home
