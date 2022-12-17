@@ -1,6 +1,6 @@
 import { Suspense } from "react"
-import { Outlet } from "react-router-dom"
-import { NavLink } from "react-router-dom"
+import { Outlet, NavLink } from "react-router-dom"
+
 export const Navbar = () => {
     
     return (
