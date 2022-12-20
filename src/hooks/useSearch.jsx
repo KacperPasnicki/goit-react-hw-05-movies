@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchSearch } from '../API/API'
+import { fetchSearch } from '../API/API';
 
 export const useSearch = query => {
   const [movies, setMovies] = useState();

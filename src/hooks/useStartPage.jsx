@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchTrending } from '../API/API'
+import { fetchTrending } from '../API/API';
 
 export const useStartPage = () => {
   const [trendList, setTrendList] = useState(null);

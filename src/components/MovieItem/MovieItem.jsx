@@ -1,31 +1,22 @@
+import { React, Link } from 'react';
+import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import css from 'MovieItem.module.css';
 
-
-
-        
-import {React, Link} from 'react'
-import { useLocation } from "react-router-dom";
-const MovieItem = ({
-id,
-title,
-movie
-}) => {
+const MovieItem = ({ title, movie }) => {
   const location = useLocation();
   return (
-   <b className='Links'>
-    <Link to={`${movie.id}`} location={location}>
-    {title}
-    </Link>
+    <b className={css.Links}>
+      <Link to={`${movie.id}`} location={location}>
+        {title}
+      </Link>
     </b>
+  );
+};
 
-  )
-}
+export default MovieItem;
 
-export default MovieItem
-
-
-
-        // ImageGalleryItem.propTypes = {
-        //     images: PropTypes.array.isRequired,
-        //     onCLick: PropTypes.func.isRequired
-        //       }
-        
+MovieItem.propTypes = {
+  title: PropTypes.object.isRequired,
+  movie: PropTypes.object.isRequired,
+};

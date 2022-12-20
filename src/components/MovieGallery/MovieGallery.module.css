@@ -1,0 +1,15 @@
+.MovieItem {
+    padding: 15px;
+    list-style: none;
+    cursor: pointer;
+  }
+  
+  .Links {
+    color: antiquewhite;
+    text-decoration: none;
+  }
+
+.MovieItem:hover {
+  opacity: 0.9;
+  transform: scale(1.005);
+}

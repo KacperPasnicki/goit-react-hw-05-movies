@@ -1,0 +1,21 @@
+.header {
+  margin-top: 30px;
+  font-size: 6.4vh;
+  padding: 20px;
+  color: orangered;
+}
+.MovieItem {
+  padding: 15px;
+  list-style: none;
+  /* color: #39445a; */
+  cursor: pointer;
+}
+
+.MovieItem:hover {
+  opacity: 0.9;
+  transform: scale(1.005);
+}
+.Links {
+  color: antiquewhite;
+  text-decoration: none;
+}
