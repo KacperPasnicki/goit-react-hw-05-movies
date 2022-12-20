@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/668.dc2b1fe8.chunk.css","mappings":"AAAA,8BACI,eACF,CACA,0BAEE,cAAe,CADf,oBAEF","sources":["components/NotFound/NotFound.module.css"],"sourcesContent":[".NotFoundText {\n    margin-left: 30%;\n  }\n  .NotFound {\n    margin: 15% 20% 0 30%;\n    font-size: 15vh;\n  }"],"names":[],"sourceRoot":""}

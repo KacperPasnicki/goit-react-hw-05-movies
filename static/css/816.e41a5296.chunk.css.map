@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/816.e41a5296.chunk.css","mappings":"AAAA,+BACI,aAAmB,CACnB,oBACF,CACA,qCACE,aACF","sources":["pages/MovieDetailsPage/MovieDetailsPage.module.css"],"sourcesContent":[".Links {\n    color: antiquewhite;\n    text-decoration: none;\n  }\n  .detailsPage {\n    color: antiquewhite;\n  }"],"names":[],"sourceRoot":""}
